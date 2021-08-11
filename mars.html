@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | Planets fact site</title>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+
+    <p class="nav__brand">The Planets<p>
+
+
+    <ul class="nav__ul">
+      <li class="nav__mercury main__li-hover"> <a class="nav__a-mercury" href="index.html"> Mercury</a> </li>
+      <li class="nav__venus main__li-hover"> <a class="nav__a-venus" href="venus.html"> Venus </a> </li>
+      <li class="nav__earth main__li-hover"> <a class="nav__a-earth" href="earth.html"> Earth </a> </li>
+      <li class="nav__mars main__li-hover"> <a class="nav__a-mars" href="mars.html"> Mars </a> </li>
+      <li class="nav__jupiter main__li-hover"> <a class="nav__a-jupiter" href="jupiter.html"> Jupiter </a> </li>
+      <li class="nav__saturn main__li-hover"> <a class="nav__a-saturn" href="saturn.html"> Saturn </a> </li>
+      <li class="nav__uranus main__li-hover"> <a class="nav__a-uranus" href="uranus.html"> Uranus </a> </li>
+      <li class="nav__neptune main__li-hover "> <a class="nav__a-neptune" href="neptune.html"> Neptune </a> </li>
+    </ul>
+
+
+    <img class="hamburger" src="/assets/icon-hamburger.svg" alt="hamburger" onclick="hamburger()">
+
+  </nav>
+
+
+  <main class="main">
+
+    <div class="main__wrapper">
+
+
+      <div class="mobile__overview-nav">
+        <input class="mob__mars-input" type="radio" checked="checked" name="mob_overview" value="mob_overview" id="mob__overview">
+        <label class="mob__mars mob__link" for="mob__overview" onclick="outsideButton()"> <h4>Overview</h4></label>
+
+        <input type="radio" name="mob_overview" value="mob_structure" id="mob__structure">
+        <label class="mob__mars mob__link" for="mob__structure" onclick="internalButton()"><h4> Structure </h4></label>
+
+        <input type="radio" name="mob_overview" value="mob_geo" id="mob__geo">
+        <label class="mob__mars mob__link" for="mob__geo" onclick="geoButton()"> <h4>Geology</h4></label>
+      </div>
+
+      <div class="main__content-images">
+
+
+        <img class="mars__img  main_content-planet-img planet-outside" src="./assets/planet-mars.svg" alt="planet-mars">
+
+        <img class="mars__img main_content-planet-img planet-internal" src="./assets/planet-mars-internal.svg" alt="planet internal - mars">
+
+        <img class="main__img-geo planet-geo" src="./assets/geology-mars.png" alt="Planet geology">
+      </div>
+
+      <div class="main__content-text">
+      <div class="main__mobile-text">
+
+
+        <h1>Mars</h1>
+
+        <!-- Overview Content Start -->
+        <div class="planet-outside">
+
+          <p>Mars is the fourth planet from the Sun and the second-smallest planet
+  in the Solar System, being larger than only Mercury. In English, Mars
+  carries the name of the Roman god of war and is often referred to as
+  the "Red Planet".</p>
+
+          <span class="main__source-span">Source : <a href="https://en.wikipedia.org/wiki/Mars"> Wikipedia</a> <img src="/assets/icon-source.svg" alt=""> </span><!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet) -->
+
+
+        </div>
+        <!-- Overview Content End -->
+
+        <!-- Internal Structure Content Start -->
+        <div class="planet-internal">
+
+
+          <p> Like Earth, Mars has differentiated into a dense metallic core overlaid
+  by less dense materials. Scientists initially determined that the core
+  is at least partially liquid. Current models of its interior imply a
+  core consisting primarily of iron and nickel with about 16–17% sulfur.</p>
+
+          <span class="main__source-span">Source : <a href="https://en.wikipedia.org/wiki/Mars#Internal_structure"> Wikipedia</a> <img src="/assets/icon-source.svg" alt=""> </span>
+
+
+
+        </div>
+        <!-- Internal Structure Content End -->
+
+        <!-- Surface Geology Content Start -->
+        <div class="planet-geo">
+
+          <p>
+            Mars is a terrestrial planet whose surface consists of minerals containing
+  silicon and oxygen, metals, and other elements that typically make up rock.
+  The surface is primarily composed of tholeiitic basalt, although parts are
+  more silica-rich than typical basalt.</p>
+
+          <span class="main__source-span">Source : <a href="https://en.wikipedia.org/wiki/Mars#Surface_geology"> Wikipedia</a> <img src="/assets/icon-source.svg" alt=""> </span>
+
+
+          <!-- Surface Geology Content End -->
+        </div>
+
+        </div>
+
+        <div class="main__button-wrapper btn-mars">
+
+          <input class="main__button main__button-overview" type="radio" checked="checked"  id="overview" name="buttons" value="" onclick="outsideButton()">
+          <label class="main__button " for="overview">
+            <h4> 01 </h4>
+            <h3>Overview</h3>
+          </label>
+
+          <input class="main__button main__button-overview" type="radio" id="internal" name="buttons" value="" onclick="internalButton()">
+          <label class="main__button " for="internal">
+            <h4> 02 </h4>
+            <h3> Internal Structure </h3>
+          </label>
+
+          <input class="main__button main__button-overview" type="radio" id="geo" name="buttons" value="" onclick="geoButton()">
+          <label class="main__button " for="geo">
+            <h4> 03 </h4>
+            <h3> Surface Geology </h3>
+          </label>
+        </div>
+      </div>
+      <div class="main__planet-info-wrapper">
+
+        <div class="main__planet-info">
+
+          <h4>Rotation Time</h4>
+          <h2>1.03 Days</h2>
+
+        </div>
+
+
+        <div class="main__planet-info">
+
+          <h4>Revolution Time</h4>
+          <h2>1.88 Years</h2>
+
+        </div>
+
+
+        <div class="main__planet-info">
+
+          <h4>Radius</h4>
+          <h2>3,389.5 KM</h2>
+
+        </div>
+
+
+        <div class="main__planet-info">
+
+          <h4>Average Temp.</h4>
+          <h2> -28°c</h2>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+  <script src="index.js"></script>
+</body>
+
+</html>

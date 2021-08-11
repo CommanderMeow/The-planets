@@ -1,0 +1,720 @@
+@use 'colors'as *;
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 25px;
+  font-family: 'spartan', sans-serif;
+  background-color: $darkblue;
+  background-image: url("../assets/background-stars.svg");
+  color: $white;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+/*--- Headings ---*/
+h1 {
+  font-family: 'Antonio', sans-serif;
+  font-size: 80px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Antonio', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: 'spartan', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 25px;
+  letter-spacing: 1.5;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: 'spartan', sans-serif;
+  text-transform: uppercase;
+  color: $grey;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 25px;
+  letter-spacing: 1;
+}
+/* --- Navigation ---*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  border-bottom: solid 1px $grey;
+
+  img {
+    display: none;
+  }
+}
+
+.nav__brand {
+  font-size: 28px;
+  font-family: 'Antonio', sans-serif;
+  margin-left: 40px;
+}
+
+.nav__ul {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px 0 0;
+  padding-left: 0;
+  font-size: 11px;
+
+  li {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    margin: 0 20px;
+    border-top: solid 3px transparent;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+.main__li-hover:hover {
+  font-weight: bold;
+}
+
+.nav__mercury:hover {
+  border-top: solid 3px $mercury;
+}
+
+.nav__venus:hover {
+  border-top: solid 3px $venus;
+}
+
+.nav__earth:hover {
+  border-top: solid 3px $earth;
+}
+
+.nav__mars:hover {
+  border-top: solid 3px $mars;
+}
+
+.nav__jupiter:hover {
+  border-top: solid 3px $jupiter;
+}
+
+.nav__saturn:hover {
+  border-top: solid 3px $saturn;
+}
+
+.nav__uranus:hover {
+  border-top: solid 3px $uranus;
+}
+
+.nav__neptune:hover {
+  border-top: solid 3px $neptune;
+}
+
+.mobile__overview-nav {
+  display: none;
+}
+/* --- Main Content ---*/
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main__wrapper {
+  width: 1110px;
+  max-height: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, 620px 350px);
+  grid-template-rows: repeat(2,543px 128px);
+  column-gap: 140px;
+  row-gap: 50px;
+  grid-template-areas: "planet-image planet-text" "planet-info planet-info";
+}
+
+
+/* --- Planet Images --*/
+
+
+.main__content-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: planet-image;
+}
+
+.main__img-geo {
+  position: absolute;
+  width: 163px;
+  bottom: 0;
+}
+
+
+/*--- Main text content ---*/
+
+
+.main__content-text {
+  grid-area: planet-text;
+}
+
+.planet-outside {  /*--- JS display properties --*/
+  display: block;
+}
+
+.planet-internal { /*--- JS display properties --*/
+  display: none;
+}
+
+.planet-geo {  /*--- JS display properties --*/
+  display: none;
+}
+
+.main__source-span {  /*--- Wiki link span --*/
+  display: block;
+  margin: 20px 0;
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+
+/*--- Radio Buttons --*/
+
+
+.main__button-wrapper label {  /*--- label information - displayed button --*/
+  cursor: pointer;
+  display: flex;
+  margin: 15px 0;
+  width: 350px;
+  height: 48px;
+  background-color: transparent;
+  border: solid 1px $darkgrey;
+  color: $white;
+  text-align: left;
+  h3,h4 {
+    display: inline;
+    margin-left: 20px;
+  }
+  &:hover {
+    background-color: $darkgrey;
+  }
+}
+
+.main__button-wrapper input {
+  display: none;
+}
+
+.btn-mercury input:checked + label{
+  background-color: $mercury;
+}
+
+.btn-venus input:checked + label{
+  background-color: $venus;
+}
+
+.btn-earth input:checked + label{
+  background-color: $earth;
+}
+
+.btn-mars input:checked + label{
+  background-color: $mars;
+}
+
+.btn-jupiter input:checked + label{
+  background-color: $jupiter;
+}
+
+.btn-saturn input:checked + label{
+  background-color: $saturn;
+}
+
+.btn-uranus input:checked + label{
+  background-color: $uranus;
+}
+
+.btn-neptune input:checked + label{
+  background-color: $neptune;
+}
+/* ---- Info wrapper ---- */
+.main__planet-info-wrapper {
+  grid-area: planet-info;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__planet-info {
+  padding: 10px 20px;
+  text-align: left;
+  width: 215px;
+  height: 108px;
+  border: solid 1px $darkgrey;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+/* --- Tablet View 768 and Under --- */
+
+@media only screen and (min-width: 401px) and (max-width:768px) {
+
+
+body {
+  overflow: auto;
+  font-size: 11px;
+}
+
+
+h1 {
+  font-size: 48px;
+}
+
+h2{
+  font-size: 24px;
+}
+h4 {
+  font-size: 8px;
+}
+.nav {
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  justify-content: center;
+  padding-bottom:40px;
+}
+
+
+.nav__brand {
+  margin-left: 0;
+  font-size: 28px;
+}
+
+.nav__ul {
+  margin: 0;
+  font-weight: bold;
+    li:hover {
+      border-bottom: none;
+
+    }
+}
+
+
+.main {
+  align-items: flex-start;
+}
+.main__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+  height: auto;
+  row-gap:0;
+}
+
+
+.main__content-images{
+  min-height:460px;
+}
+
+.main__img-geo{
+
+}
+
+/* --- planet image sizes --- */
+.mercury__img{
+  width:184px;
+}
+
+.venus__img{
+  width: 253px;
+}
+
+.earth__img {
+  width: 285px;
+}
+
+.mars__img{
+  width: 213px;
+}
+
+.jupiter__img {
+  width:369px;
+}
+
+.saturn__img {
+  width: 422px;
+}
+
+.uranus__img{
+  width: 290px;
+}
+.neptune__img {
+  width: 285px;
+}
+
+/* --- Main content --- */
+.main__content-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__mobile-text {
+ width: 50%;
+ border-top: solid 1px $white;
+
+}
+.main__button-wrapper {
+  margin-top: 40px;
+  label{
+    width: 281px;
+}
+}
+
+
+
+.main__planet-info-wrapper {
+  width: 100%;
+  margin-top: 30px;
+
+
+}
+
+
+.main__planet-info{
+  width: 164px;
+  height:88px;
+  padding:0;
+    h2,h4 {
+      padding-left: 15px;
+    }
+}
+
+}
+
+
+
+
+
+
+/* --- Mobile scss 400 and Under --- */
+
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 8px;
+  }
+
+  body {
+    overflow: auto;
+    font-size: 11px;
+  }
+
+  .nav img {
+    position: absolute;
+    right: 30px;
+    top: 32px;
+    display: block;
+    height: 20px;
+  }
+
+  .nav__brand {
+    margin-left: 30px;
+  }
+
+  .nav__ul {
+    position: absolute;
+    top: 83px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: $darkblue;
+    z-index: 1;
+    width: 100%;
+    height: 665px;
+
+    li {
+      position: relative;
+      display: flex;
+      align-self: stretch;
+      border-bottom: solid 1px $grey;
+      height: 65px;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: 700;
+      a {
+        margin-left: 10px;
+      }
+      &::after {
+        position: absolute;
+        right:0;
+        content: url(../assets/icon-chevron.svg);
+
+
+      }
+    }
+}
+
+.nav__mercury:hover,.nav__venus:hover,
+.nav__earth:hover, .nav__mars:hover,
+ .nav__jupiter:hover, .nav__saturn:hover,
+  .nav__uranus:hover,.nav__neptune:hover {
+    border-top:none;
+  }
+    .nav__mercury::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $mercury; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      font-size: 50px;
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 50px; /* Also needed for space (tweak if needed) */
+
+      /* Also needed for space (tweak if needed) */
+    }
+    .nav__venus::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $venus; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      font-size: 50px;
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 50px; /* Also needed for space (tweak if needed) */
+    }
+    .nav__earth::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $earth; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      font-size: 50px;
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 50px; /* Also needed for space (tweak if needed) */
+    }
+    .nav__mars::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $mars; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      font-size: 50px;
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 50px; /* Also needed for space (tweak if needed) */
+    }
+    .nav__jupiter::before {
+       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+       color: $jupiter; /* Change the color */
+       font-weight: bold; /* If you want it to be bold */
+       font-size: 50px;
+       display: inline-block; /* Needed to add space between the bullet and the text */
+       width: 50px; /* Also needed for space (tweak if needed) */
+     }
+    .nav__saturn::before {
+       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+       color: $saturn; /* Change the color */
+       font-weight: bold; /* If you want it to be bold */
+       font-size: 50px;
+       display: inline-block; /* Needed to add space between the bullet and the text */
+       width: 50px; /* Also needed for space (tweak if needed) */
+     }
+    .nav__uranus::before {
+       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+       color: $uranus; /* Change the color */
+       font-weight: bold; /* If you want it to be bold */
+       font-size: 50px;
+       display: inline-block; /* Needed to add space between the bullet and the text */
+       width: 50px; /* Also needed for space (tweak if needed) */
+     }
+    .nav__neptune::before {
+       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+       color: $neptune; /* Change the color */
+       font-weight: bold; /* If you want it to be bold */
+       font-size: 50px;
+       display: inline-block; /* Needed to add space between the bullet and the text */
+       width: 50px; /* Also needed for space (tweak if needed) */
+     }
+
+    .main {
+      position: relative;
+    }
+    /* --- Overview tabs ---*/
+
+    .mobile__overview-nav {
+      position: absolute;
+      display: flex !important;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+      height: 50px;
+      padding: 0;
+      top: 0;
+      display: block;
+      border-bottom: solid 1px $grey;
+
+        & input {
+          display: none;
+        }
+
+        h4 {
+          margin: 0;
+      }
+    }
+
+    .mobile__overview-nav input:checked + label {
+      h4 {
+        color: white;
+      }
+    }
+
+    .mob__link {
+      height: 49px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    .mob__mercury-input input:checked + .mob__mercury,
+    .mob__mercury:hover {
+      border-bottom: solid 3px $mercury;
+    }
+
+    .mob__venus:hover {
+      border-bottom: solid 3px $venus;
+    }
+
+    .mob__earth:hover {
+      border-bottom: solid 3px $earth;
+    }
+
+    .mob__mars:hover {
+      border-bottom: solid 3px $mars;
+    }
+
+    .mob__jupiter:hover {
+      border-bottom: solid 3px $jupiter;
+    }
+
+    .mob__saturn:hover {
+      border-bottom: solid 3px $saturn;
+    }
+
+    .mob__uranus:hover {
+      border-bottom: solid 3px $uranus;
+    }
+
+    .mob__neptune:hover {
+      border-bottom: solid 3px $neptune;
+    }
+    /* --- Main content ---*/
+    .main__wrapper {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 150px;
+    }
+
+    .main__content-images {
+      min-height: 315px;
+    }
+
+    .mercury__img {
+      width: 111px;
+    }
+
+    .venus__img{
+      width: 154px;
+    }
+
+    .earth__img {
+      width: 173px;
+    }
+
+    .mars__img{
+      width: 129px;
+    }
+
+    .jupiter__img {
+      width:224px;
+    }
+
+    .saturn__img {
+      width: 256px;
+    }
+
+    .uranus__img{
+      width: 176px;
+    }
+    .neptune__img {
+      width: 173px;
+    }
+
+    .main__img-geo {
+      width: 100px;
+    }
+
+    .main__content-text {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      width: 85%;
+      margin: auto;
+      text-align: center;
+
+      p {
+        text-align: center;
+      }
+    }
+
+    .main__button-wrapper {
+      display: none;
+
+    }
+
+    .main__planet-info-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 50px;
+
+    }
+
+    .main__planet-info {
+      margin: 5px 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      height: auto;
+
+      h2 {
+        margin-right: 30px;
+      }
+
+      h4 {
+        margin-left: 30px;
+      }
+    }
+  }
